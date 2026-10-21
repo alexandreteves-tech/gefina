@@ -1,10 +1,26 @@
-const invoices = [{
+type InvoiceStatus = 'pending' | 'paid';
+
+interface Invoice {
+    id: number;
+    amount: number;
+    status: InvoiceStatus;
+    issueDate: string;
+    dueDate: string;
+    customer: {
+        id: number;
+        name: string;
+        email: string;
+    };
+}
+
+const invoices: Invoice[] = [{
     id: 1,
     amount: 125039,
     status: 'pending',
     issueDate: '07-10-2026',
     dueDate: '05-11-2026',
     customer: {
+        id: 1,
         name:  'Construtora Meridiano',
         email: 'contato@meridiano.com.br'
     }
@@ -15,6 +31,7 @@ const invoices = [{
     issueDate: '03-09-2026',
     dueDate: '05-10-2026',
     customer: {
+        id: 2,
         name:  'Gráfica Nova',
         email: 'nova@grafica.com.br'
     }
@@ -26,6 +43,7 @@ const invoices = [{
     issueDate: '01-09-2026',
     dueDate: '01-10-2026',
     customer: {
+        id: 3,
         name:  'Todos por Um',
         email: 'comercial@todosporum.com'
     }
